@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>KDT 11기</title>
+</head>
+<body>
+  <!--div태그 : block태그로써 한줄의 영역을 차지-->
+  <div>Hello World!!</div>
+  <div>안녕하세요</div>
+  <!--H1~6 제목태그-->
+  <h1>Heading 1</h1>
+  <h2>Heading 2</h2>
+  <h3>Heading 3</h3>
+  <h4>Heading 4</h4>
+  <h5>Heading 5</h5>
+  <h6>Heading 6</h6>
+  <!--ㅔ태그: 문장을 쓰는 곳-->
+  <!--br태그 : 줄바꿈 태그-->
+  <p>안녕하세요. <br> 워녕입니다.</p>
+  <!--hr태그 : 한줄 그어줌-->
+  <hr>
+  <!--ul태그 : 순서없는 목록
+  ul 태그속성: disc, circle, square, none-->
+  <!--li태그 : ul,ol태그 안에 list 작성-->  
+  <ul type="disc">
+      <li>사과</li>
+      <li>바나나</li>
+      <li>파인애플</li>
+  </ul>
+  <!--ol태그 : 순서있는 목록
+  ol 태그속성(순번모양) : 1, A, a, I, i
+  start : 시작번호
+  reversed : 역순으로-->
+  <ol type="i" start="10"reversed>
+    <li>1</li>
+    <li>2</li>
+    <li>3</li>
+  </ol>
+  <ul type="square">
+    <li>
+      <ol>
+        <li><b>일</b></li>
+        <li><strong>이</strong></li>
+        <li><i>삼</i></li>
+      </ol>
+    </li>
+    <li>
+      <ol>
+        <li><em>일</em></li>
+        <li><del>이</del></li>
+        <li><u>삼</u></li>
+      </ol>
+    </li>
+  </ul>
+  <!--img태그 : 이미지 등록-->
+  <img src="https://ssl.pstatic.net/melona/libs/1474/1474337/7faa2a4dd2f1f7a9c7e3_20231226163153705.jpg" alt="광고이미지" />
+<!--a태그 : 페이지로 등록
+inline 태그 : block과 반대로 영역이 없음 a태그가 그 중 하나-->
+  <div>
+    <a href="https://www.naver.com/" target="_blank">이동</a>
+    <a href="https://www.naver.com/" target="_blank">이동</a>
+    <a href="https://www.naver.com/" target="_blank">이동</a>
+  </div>
+
+  <div>
+    <span style="color: red;"><b>안녕하세요</b></span><span>반갑습니다</span>
+  </div>
+  <hr>
+  <!--form태그 : input 태그를 담는 역할, 서버로 input의 데이터를 전송시키는 역할-->
+  <!--placeholder속성 : 사용자에게 안내해주는 역할-->
+  <form>
+    <input type="button" value="전송" />
+    <button type="submit">버튼</button> <br>
+    <input type="text" placeholder="이름" value="hi" readonly/> <br>
+    <input type="password" placeholder="비밀번호" /> <br>
+    <input type="checkbox" name="food" value="pizza"/> 피자 <br/>
+    <input type="checkbox" name="food" value="chicken" checked/> 치킨 <br>
+    <input type="radio" name="hobby" value="camping"/>캠핑<br/>
+    <input type="radio" name="hobby" value="hiking" disabled/>등산<br/>
+    <input type="radio" name="hobby" value="swimming"/>수영<br/>
+    <input type="date"/> <br/>
+    <input type="time" /> <br/>
+    <input type="datetime-local" /> <br/>
+    <select>
+      <optgroup label="ASIA">
+        <option value="korea">대한민국</option>
+        <option value="japan">일본</option>
+        <option value="china" disabled>중국</option>
+      </optgroup>
+      <optgroup label="AMERICA">
+        <option value="usa">미국</option>
+        <option value="canada">캐나다</option>
+      </optgroup>
+    </select>
+  </form>
+
+</body>
+</html>
