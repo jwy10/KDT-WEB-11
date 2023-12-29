@@ -1,0 +1,13 @@
+h1:hover{
+  color: red;
+  /* cursor: 마우스모양을 바꿀 때*/
+  cursor: pointer;
+}
+
+a:active{
+  color: blue;
+}
+
+input:focus{
+  background-color: orange;
+}
