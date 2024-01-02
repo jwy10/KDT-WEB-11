@@ -1,0 +1,33 @@
+.container{
+  background-color: blue;
+  position: relative;
+  width: 500px;
+  height: 500px;
+}
+
+.item1{
+  background-color: yellowgreen;
+  width: 100px;
+  height: 80px;
+  position: relative;
+  top: 30px;
+  left: 50px;
+}
+
+.item2{
+  background-color: red;
+  width: 150px;
+  height: 100px;
+  position: absolute;
+  bottom: 100px;
+  right: 30px;
+}
+
+.item3{
+  background-color: orange;
+  width: 100px;
+  height: 150px;
+  position: fixed;
+  top: 100px;
+  right: 100px;
+}

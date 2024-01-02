@@ -1,0 +1,18 @@
+body {
+  margin: 0;
+  background-color: bisque;
+  height: 100vh;
+}
+
+
+.kdt{
+  background-color: blue;
+  width: calc(100vw / 10);
+  height: calc(100vw / 10);
+  color: white;
+  margin: auto;
+  text-align: center;
+  margin-top: calc(50vh - (100vw / 20));
+  line-height: calc(100vw / 10);
+
+}

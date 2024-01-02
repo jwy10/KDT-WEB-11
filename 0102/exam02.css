@@ -1,0 +1,14 @@
+body {
+  margin: 0;
+}
+
+.border{
+  background-color: greenyellow;
+  width: 200px;
+  height: 200px;
+  text-align: center;
+  line-height: 200px;
+  border-width: 10px 20px 30px 40px;
+  border-color: black skyblue pink red;
+  border-style: solid dotted inset dashed;
+}
