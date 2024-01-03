@@ -1,0 +1,25 @@
+.main{
+  width: 500px;
+  height: 500px;
+  background-color: blue;
+  display: flex;
+  flex-direction: column-reverse;
+}
+
+.item1{
+  width: 100px;
+  height: 100px;
+  background-color: magenta;
+}
+
+.item2{
+  width: 100px;
+  height: 100px;
+  background-color: cyan;
+}
+
+.item3{
+  width: 100px;
+  height: 100px;
+  background-color: yellow;
+}

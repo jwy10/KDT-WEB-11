@@ -1,0 +1,97 @@
+.bug{
+  position: relative;
+}
+
+.bugeye{
+  position: absolute;
+}
+
+.eye1{
+  background-color: black;
+  width: 15px;
+  height: 15px;
+  border-radius: 50%;
+  z-index: 5;
+  top: 20px;
+  left: 20px;
+}
+
+.eye2{
+  background-color: white;
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  z-index: 4;
+  top: 16px;
+  left: 20px;
+}
+
+.bugbody{
+  position: relative;
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+  position: absolute;
+}
+
+.body1{
+  background-color: rgb(33, 150, 243);
+  z-index: 1;
+}
+
+.body2{
+  background-color: rgb(25, 118, 251);
+  z-index: 2;
+  top: 45px;
+  left: 70px;
+}
+
+.body3{
+  background-color: rgb(14, 71, 151);
+  z-index: 3;
+  top: 85px;
+  left: 120px;
+}
+
+.body4{
+  background-color: rgb(177, 203, 254);
+  z-index: 4;
+  top: 90px;
+  left: 170px;
+}
+
+.body5{
+  background-color: rgb(0, 130, 153);
+  z-index: 105;
+  top: 90px;
+  left: 230px;
+}
+
+.grass{
+  width: 150px;
+  height: 100px;
+  position: absolute;
+}
+
+.grass1{
+  top: 100px;
+  z-index: 100;
+}
+
+.grass2{
+  top: 123px;
+  left: 70px;
+  z-index: 100;
+}
+
+.grass3{
+  top: 140px;
+  left: 170px;
+  z-index: 100;
+}
+
+.grass4{
+  top: 130px;
+  left: 216px;
+  z-index: 100; 
+}

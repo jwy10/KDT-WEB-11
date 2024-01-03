@@ -1,0 +1,49 @@
+.main{
+  background-color: black;
+  width: 500px;
+  height: 500px;
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  /* align-items: stretch; */
+  /* justify-content: space-around; */
+  /* align-content: flex-start; */
+
+}
+
+.box{
+  width: 100px;
+  height: 100px;
+}
+
+.box1{
+  background-color: red;
+}
+
+.box2{
+  background-color: orange;
+}
+
+.box3{
+  background-color: yellow;
+}
+
+.box4{
+  background-color: greenyellow;
+}
+
+.box5{
+  background-color: green;
+}
+
+.box6{
+  background-color: skyblue;
+}
+
+.box7{
+  background-color: blue;
+}
+
+.box8{
+  background-color: navy;
+}
