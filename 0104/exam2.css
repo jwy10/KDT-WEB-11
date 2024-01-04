@@ -1,0 +1,37 @@
+.moving-ball{
+  position: relative;
+  top: 100px;
+  left: 100px;
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+  background-color: pink;
+  animation: mov-ball 3s linear 6;
+}
+
+@keyframes mov-ball {
+  0%{
+    left: 0;
+    top: 0;
+  }
+
+  25%{
+    left: 500px;
+    top: 0px;
+  }
+
+  50%{
+    left: 500px;
+    top: 500px;
+  }
+
+  75%{
+    left: 0px;
+    top: 500px;
+  }
+
+  100%{
+    left: 0;
+    top: 0;
+  }
+}
