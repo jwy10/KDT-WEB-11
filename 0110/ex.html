@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    .hidden {
+      display: none;
+    }
+  </style>
+</head>
+<body>
+  <!-- <div class="exam">1</div>
+  <div class="exam">2</div>
+  <div class="exam">3</div>
+  <div class="exam">4</div>
+  <div class="exam">5</div> -->
+  <div id="visible">Hello <span>World</span></div>
+  <div id="hidden" class="hidden">Hello <span>World</span></div>
+  <div id="text" style="display: none;">안녕 <span>하세요</span></div>
+  <details>
+    <summary>Q&A</summary>
+  </details>
+  <script>
+    // const exam = document.getElementsByClassName('exam');
+    // console.log(exam);
+    // for (let i=1; i<exam.length; i+=2){
+    //     exam[i].parentNode.removeChild(exam[i]);
+    // }
+    // const exam = document.querySelectorAll('.exam')
+    // console.log(exam)
+    // for (let i=1; i<exam.length; i+=2){
+    //     exam[i].parentNode.removeChild(exam[i]);
+    // }
+    const visible = document.getElementById('visible');
+    const hidden = document.getElementById('hidden')
+
+    // text.innerText = 'hi';
+    // text.textContent = '안녕';
+    console.log('visible innnerText',visible.innerText);
+    console.log('visible textContent', visible.textContent)
+    
+    
+    /*
+      innerText: 1.렌더링된 텍스트 반영. 즉, 스타일링이 적용된 후 텍스트 반환 
+                 2. 성능이 textContent 보다 느릴 수 있음
+      textContent 1. 요소 "전체" 텍스트 컨텐츠를 가져옴. 즉, css스타일에 관계없이 모든 텍스트 반환
+                  2. 렌더링된 텍스트를 계산하지 않기 떄문에 성능면에 innerText보다 빠름
+    */ 
+  </script>
+</body>
+</html>
