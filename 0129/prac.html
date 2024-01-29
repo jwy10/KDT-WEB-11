@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <script>
+    const word1 = "abc";
+    const word2 = 'xyz';
+    console.log([...word1,...word2])
+
+    class Shape{
+      constructor(width,height){
+        this.width = width;
+        this.height = height;
+      }
+
+      getArea(){
+        console.log(this.width*this.height)
+      }
+    }
+
+    let rec1 = new Shape(3,4)
+    rec1.getArea()
+
+
+  class Rectangle extends Shape{
+    getCross(){
+      console.log(Math.sqrt((this.width**2)+(this.height**2)))
+    }
+  }
+
+  let rec2 = new Rectangle(3,4)
+  rec2.getCross()
+
+  class 
+
+
+
+    </script>
+</body>
+</html>
