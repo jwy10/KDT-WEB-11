@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <script>
+    function call(name){
+      return new Promise((resolve,reject) => {
+        setTimeout(() => {
+          console.log(name)
+          resolve(name)
+        }, 1000);
+      })
+    }
+
+    function back(name2){
+      return new Promise((resolve,reject) => {
+        setTimeout(() => {
+          console.log(name2)
+          resolve(name2)
+        }, 1000);
+      })
+    }
+
+    function hell(name3){
+      return new Promise((resolve,reject) => {
+        setTimeout(() => {
+          resolve(name3)
+        }, 1000);
+      })
+    }
+
+    call('kim').then((res) => {
+      console.log(res,' 반가워')
+      return back('back')
+    }).then((res1) => {
+        console.log(res1, '을 실행중이구나')
+        return hell('callback hell')
+      }).then((res2) => {
+        console.log('여기는' + res2)
+      })
+    
+  </script>
+</body>
+</html>
