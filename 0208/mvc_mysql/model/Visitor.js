@@ -2,11 +2,11 @@ const mysql = require('mysql2/promise');
 //mysql연결
 const getConn = async () => {
     return await mysql.createConnection({
-        host: 'localhost',
-        user: 'newkdt',
-        password: '1234',
-        database: 'kdt11',
-        port: 3306,
+        host: 'error',
+        user: 'error',
+        password: 'error',
+        database: 'error',
+        port: error,
     });
 };
 //문자열 보간방법
