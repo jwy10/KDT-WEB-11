@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+oㅐ<!DOCTYPE html>
 <html lang="en">
     <head>
         <meta charset="UTF-8" />
@@ -6,58 +6,55 @@
         <title>Document</title>
         <script src="/socket.io/socket.io.js"></script>
         <style>
-            #body {
-                width: 100%;
-                height: 70vh;
-                position: relative;
-                background-color: rgb(147 228 201);
-            }
-            #chat {
-                position: absolute;
-                bottom: 0px;
-                display: flex;
-                justify-content: space-between;
-                width: 100%;
-            }
-            #chat input {
-                width: 80%;
-            }
-            .my-chat {
-                display: flex;
-                justify-content: end;
-                padding: 2px 0px;
-            }
-            .my-chat p {
-                margin: 0;
-                padding: 10px;
-                background-color: yellow;
-                border-radius: 10px;
-                margin-right: 10px;
-            }
-            .other-chat {
-                display: flex;
-                justify-content: start;
-                padding: 2px 0px;
-            }
-            .other-chat p {
-                margin: 0px;
-                padding: 10px;
-                background-color: white;
-                border-radius: 10px;
-                margin-left: 10px;
-            }
-            #notice {
-                display: flex;
-                flex-direction: column;
-                text-align: center;
-                color: gray;
-            }
-            #notice p {
-                margin: 0;
-            }
-            .secret-chat p {
-                background-color: pink;
-            }
+          #body{
+            width: 100%;
+            height: 70vh;
+            position: relative;
+            background-color: rgb(81, 248, 193);
+          }
+          #chat{
+            position: absolute;
+            bottom: 0px;
+            display: flex;
+            justify-content: space-between;
+            width: 100%;
+          }
+          #chat input{
+            width: 80%;
+          }
+          .my-chat{
+            display: flex;
+            justify-content: end;
+            padding: 2px 0px;
+          }
+          .my-chat p{
+            margin: 0;
+            padding: 10px;
+            background-color: yellow;
+            border-radius: 10px;
+            margin-right: 10px;
+          }
+          .other-chat{
+            display: flex;
+            justify-content: start;
+            padding: 2px 0px;
+          }
+          .other-chat p{
+            margin: 0px;
+            padding: 10px;
+            background-color: white;
+            border-radius: 10px;
+            margin-left: 10px;
+          }
+          #notice{
+            display: flex;
+            flex-direction: column;
+            text-align: center;
+            color: grey;
+          }
+          #notice p{
+            margin: 0;
+          }
         </style>
     </head>
     <body>
@@ -68,14 +65,13 @@
                 <input type="text" id="userName" placeholder="사용자 이름 입력" />
                 <button>생성</button>
             </form>
-            <ul id="lists"></ul>
         </div>
         <div id="body" hidden>
             <div id="message">
                 <div id="notice"></div>
             </div>
             <form id="chat">
-                <select id="userList"></select>
+              <select id="userList"></select>
                 <input type="text" id="chatMessage" placeholder="메세지 입력" />
                 <button>입력</button>
             </form>
@@ -90,28 +86,17 @@
             let myName = '';
 
             //소켓이벤트
-            //개설된 채팅방 리스트
-            socket.on('roomList', (res) => {
-                console.log(res);
-                const lists = document.querySelector('#lists');
-                lists.textContent = '';
-                res.forEach((room) => {
-                    const li = document.createElement('li');
-                    li.textContent = `${room} 이름과 닉네임 입력후 입장`;
-                    lists.appendChild(li);
-                });
-            });
-
-            //접속한 사용자 리스트
-            socket.on('userList', (res) => {
-                console.log('userList', res);
-                const lists = document.querySelector('#userList');
-                let options = '<option value="all">전체</option>';
-                for (let i of res) {
-                    options += `<option value=${i.key}>${i.userName}</option>`;
-                }
-                lists.innerHTML = options;
-            });
+            socket.on('userList', (res)=>{
+              console.log('userList', res)
+              const lists = document.querySelector('#userList')
+              lists.textContent = '' //중복방지
+              let optios = '<option value ="all>전채</option>'
+              for (let i of res.user){
+                options += `<option values=${i.key}>${i.userName}</option>`
+              }
+              lists.innerHTML = options
+                
+            })
             socket.on('notice', (res) => {
                 const div = document.createElement('div');
                 const p = document.createElement('p');
@@ -123,21 +108,14 @@
                 console.log('newMessage', res);
                 const div = document.createElement('div');
                 const p = document.createElement('p');
-                if (myName === res.user) {
-                    //내가 입력한 텍스트
-                    div.classList.add('my-chat');
-                } else {
-                    //상대방이 입력한 텍스트
-                    div.classList.add('other-chat');
+                if(myName === res.user){
+                  //내가 입력한 텍스트
+                  div.classList.add('my-chat')
+                }else{
+                  //상대방이 입력한 텍스트
+                  div.classList.add('other-chat')
                 }
-                //개인메세지일때
-                if (res.dm) {
-                    div.classList.add('secret-chat');
-                }
-
-                //p.textContent = `${res.user}: ${res.message}`;
-                //귓말 추가
-                p.textContent = res.dm ? `(속닥속닥) ${res.user}: ${res.message}` : `${res.user}: ${res.message}`;
+                p.textContent = `${res.user}: ${res.message}`;
                 div.appendChild(p);
                 message.appendChild(div);
             });
@@ -152,19 +130,20 @@
                     alert('방이름과 닉네임을 적어주세요');
                     return;
                 }
-                socket.emit('create', { roomName, userName });
-                const main = document.querySelector('#main');
-                const body = document.querySelector('#body');
-                main.hidden = true;
-                body.hidden = false;
-                //전역변수에 입력한 닉네임 저장
-                myName = userName;
+                socket.emit('create', { roomName, userName })
+                  const main = document.querySelector('#main')
+                  const body = document.querySelector('#body')
+                  main.hidden =true
+                  body.hidden=false
+                    //전역변수에 입력한 닉네임 저장
+                    myName = userName;
+
             });
             chatForm.addEventListener('submit', (e) => {
                 e.preventDefault();
                 const message = chatForm.querySelector('#chatMessage');
-                const user = chatForm.querySelector('#userList');
-                socket.emit('sendMessage', { message: message.value, user: myName, select: user.value });
+                const user  = chatForm.querySelector('#userList')
+                socket.emit('sendMessage', { message: message.value, user: myName, select:user.value });
                 message.value = '';
             });
         </script>
