@@ -18,5 +18,7 @@ FunctionComponent.defaultProps = {
 };
 
 FunctionComponent.propType = {
-  name: PropTypes.string,
+  //isRequired 는 defaulf 없을 때 작동
+  time: PropTypes.number,
+  name: PropTypes.string.isRequired,
 };
