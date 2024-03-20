@@ -1,0 +1,9 @@
+@mixin box($size) {
+  width: $size;
+  height: $size;
+}
+
+@mixin LarvaBoby($size) {
+  width: $size;
+  height: $size;
+}
