@@ -1,13 +1,17 @@
 import React from 'react';
 import { useNavigate, useParams } from 'react-router-dom';
-// import { productInfos } from '../components/ProductList';
+import { productInfos } from '../components/ProductList';
 
 export default function ProductDetailPage({ products }) {
   const { productId } = useParams();
+  console.log('useParams', useParams());
+  console.log('productId', productId); // '2'
+
   // const targetProduct = productInfos[Number(productId) - 1];
   const targetProduct = products[Number(productId) - 1];
-  const { id, name, email, body } = targetProduct;
   console.log(targetProduct);
+  const { id, name, email, body } = targetProduct;
+
   const navigate = useNavigate();
   return (
     <div>
