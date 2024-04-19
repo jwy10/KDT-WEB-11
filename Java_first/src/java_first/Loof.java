@@ -7,11 +7,11 @@ public class Loof {
 			System.out.println(i);
 		}
 		
-		int i = 0;
-		while(i<5) {
-			System.out.println("i = " + i);
-			i++;
-		}
+//		int i = 0;
+//		while(i<5) {
+//			System.out.println("i = " + i);
+//			i++;
+//		}
 
 	}
 
