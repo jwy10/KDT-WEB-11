@@ -4,13 +4,34 @@ import java.util.ArrayList;
 
 public class Main {
 
+	public void musicPlayer(Music player, String play) {
+		System.out.println("===" + play + "Player ===");
+		player.play();
+		player.stop();
+	}
+	
 	public static void main(String[] args) {
-		Kim kim = new Kim("김지수", "ABC고등학교", 19, 202221321);
-		Baek baek = new Baek("백지수", "XYZ고등학교", 17, 202411321);
 		
-		kim.print();
-		baek.print();
+		Main music = new Main();
 		
+		Music mp3 = new Mp3Player();
+		Music cd = new CdPlayer();
+		music.musicPlayer(mp3, "MP3");
+		music.musicPlayer(cd, "CD");
+		
+		
+		
+
+		
+		
+		
+		
+//		Kim kim = new Kim("김지수", "ABC고등학교", 19, 202221321);
+//		Baek baek = new Baek("백지수", "XYZ고등학교", 17, 202411321);
+//		
+//		kim.print();
+//		baek.print();
+//		
 		
 		
 		
