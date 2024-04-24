@@ -4,25 +4,34 @@ import java.util.ArrayList;
 
 public class Main {
 
-	public void musicPlayer(Music player, String play) {
-		System.out.println("===" + play + "Player ===");
-		player.play();
-		player.stop();
-	}
-	
 	public static void main(String[] args) {
+			Vehicle[]  vehicles = new Vehicle[2];
+			vehicles[0] = new Car();
+			vehicles[1] = new Airplane();
+			
+			for(Vehicle vehicle: vehicles) {
+				vehicle.move();
+				//instanceOf : 객체가 지정된 유형의 인스터스인지 여부를 확인하는데 사용하는 비교 연산다
+				if(vehicle instanceof Flyable) {
+					((Flyable) vehicle).fly();
+				}
+			}
 		
-		Main music = new Main();
-		
-		Music mp3 = new Mp3Player();
-		Music cd = new CdPlayer();
-		music.musicPlayer(mp3, "MP3");
-		music.musicPlayer(cd, "CD");
 		
 		
 		
-
-		
+//	public void musicPlayer(Music player, String play) {
+//		System.out.println("===" + play + "Player ===");
+//		player.play();
+//		player.stop();
+//	}
+//	
+//		Main music = new Main();
+//		
+//		Music mp3 = new Mp3Player();
+//		Music cd = new CdPlayer();
+//		music.musicPlayer(mp3, "MP3");
+//		music.musicPlayer(cd, "CD");
 		
 		
 		
